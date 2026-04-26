@@ -676,7 +676,8 @@ ul { list-style: none; }
 
 /* Artist sub-sections (Guest / Collaboration) */
 .artists__sub {
-  margin-top: clamp(1.5rem, 3vw, 2.5rem);
+  max-width: 900px;
+  margin: clamp(1.5rem, 3vw, 2.5rem) auto 0;
 }
 .artists__sub-line-full {
   height: 1px;
@@ -691,7 +692,9 @@ ul { list-style: none; }
 .artists__sub-col {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: .8rem;
+  text-align: center;
 }
 .artists__sub-label {
   font-family: var(--f-head);
@@ -701,8 +704,10 @@ ul { list-style: none; }
   opacity: .45;
 }
 .artist-card {
+  width: 100%;
   border: 1px solid rgba(255,255,255,.08);
   padding: 1.4rem 1.6rem;
+  text-align: center;
   transition: border-color .3s;
 }
 .artist-card:hover {
