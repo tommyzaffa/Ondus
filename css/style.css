@@ -674,57 +674,63 @@ ul { list-style: none; }
   opacity: .8;
 }
 
-/* Artist sub-sections (Guest / Collaboration) */
-.artists__sub {
+/* Artist extras (Guest / Collaboration) */
+.artists__extras {
   max-width: 900px;
-  margin: clamp(1.5rem, 3vw, 2.5rem) auto 0;
+  margin: clamp(2rem, 4vw, 3.5rem) auto 0;
+  border-top: 1px solid currentColor;
+  opacity: .15;
 }
-.artists__sub-line-full {
-  height: 1px;
-  background: rgba(255,255,255,.1);
-  margin-bottom: clamp(1.2rem, 2.5vw, 2rem);
+.artists__extras {
+  opacity: 1;
+  border-top: 1px solid rgba(0,0,0,.12);
+  padding-top: clamp(1.5rem, 3vw, 2.5rem);
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
 }
-.artists__sub-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(1rem, 3vw, 2rem);
-}
-.artists__sub-col {
+.artists__extra {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: .8rem;
-  text-align: center;
+  gap: .35rem;
 }
-.artists__sub-label {
+.artists__extra-divider {
+  width: 1px;
+  align-self: stretch;
+  background: rgba(0,0,0,.12);
+  margin: 0 clamp(1.5rem, 4vw, 3rem);
+  flex-shrink: 0;
+}
+.artists__extra-label {
   font-family: var(--f-head);
-  font-size: .7rem;
-  letter-spacing: .35em;
+  font-size: .65rem;
+  letter-spacing: .3em;
   text-transform: uppercase;
-  opacity: .45;
+  opacity: .4;
+  margin-bottom: .2rem;
 }
-.artist-card {
-  width: 100%;
-  border: 1px solid rgba(255,255,255,.08);
-  padding: 1.4rem 1.6rem;
-  text-align: center;
-  transition: border-color .3s;
-}
-.artist-card:hover {
-  border-color: rgba(255,255,255,.2);
-}
-.artist-card h3 {
+.artists__extra-name {
   font-family: var(--f-head);
-  font-size: 1.3rem;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
   letter-spacing: .05em;
-  margin-bottom: .3rem;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.1;
 }
-.artist-card .artist__spec {
+.artists__extra .artist__spec {
   margin-bottom: 0;
 }
-@media (max-width: 480px) {
-  .artists__sub-row {
-    grid-template-columns: 1fr;
+@media (max-width: 560px) {
+  .artists__extras {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .artists__extra-divider {
+    width: 100%;
+    height: 1px;
+    margin: 0;
+    align-self: auto;
   }
 }
 
