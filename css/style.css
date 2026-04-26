@@ -674,6 +674,54 @@ ul { list-style: none; }
   opacity: .8;
 }
 
+/* Artist sub-sections (Guest / Collaboration) */
+.artists__sub {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  border-top: 1px solid rgba(255,255,255,.1);
+  padding-top: clamp(1.5rem, 3vw, 2.5rem);
+}
+.artists__sub-header {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+.artists__sub-label {
+  font-family: var(--f-head);
+  font-size: .7rem;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  opacity: .45;
+  white-space: nowrap;
+}
+.artists__sub-line {
+  flex: 1;
+  height: 1px;
+  background: rgba(255,255,255,.07);
+}
+.artists__sub-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+.artist-card {
+  border: 1px solid rgba(255,255,255,.08);
+  padding: 1.4rem 1.6rem;
+  transition: border-color .3s;
+}
+.artist-card:hover {
+  border-color: rgba(255,255,255,.2);
+}
+.artist-card h3 {
+  font-family: var(--f-head);
+  font-size: 1.3rem;
+  letter-spacing: .05em;
+  margin-bottom: .3rem;
+}
+.artist-card .artist__spec {
+  margin-bottom: 0;
+}
+
 /* ==============================
    PORTFOLIO
    ============================== */
