@@ -676,15 +676,22 @@ ul { list-style: none; }
 
 /* Artist sub-sections (Guest / Collaboration) */
 .artists__sub {
-  margin-top: clamp(2.5rem, 5vw, 4rem);
-  border-top: 1px solid rgba(255,255,255,.1);
-  padding-top: clamp(1.5rem, 3vw, 2.5rem);
+  margin-top: clamp(1.5rem, 3vw, 2.5rem);
 }
-.artists__sub-header {
+.artists__sub-line-full {
+  height: 1px;
+  background: rgba(255,255,255,.1);
+  margin-bottom: clamp(1.2rem, 2.5vw, 2rem);
+}
+.artists__sub-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(1rem, 3vw, 2rem);
+}
+.artists__sub-col {
   display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  margin-bottom: 1.5rem;
+  flex-direction: column;
+  gap: .8rem;
 }
 .artists__sub-label {
   font-family: var(--f-head);
@@ -692,17 +699,6 @@ ul { list-style: none; }
   letter-spacing: .35em;
   text-transform: uppercase;
   opacity: .45;
-  white-space: nowrap;
-}
-.artists__sub-line {
-  flex: 1;
-  height: 1px;
-  background: rgba(255,255,255,.07);
-}
-.artists__sub-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 1rem;
 }
 .artist-card {
   border: 1px solid rgba(255,255,255,.08);
@@ -720,6 +716,11 @@ ul { list-style: none; }
 }
 .artist-card .artist__spec {
   margin-bottom: 0;
+}
+@media (max-width: 480px) {
+  .artists__sub-row {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ==============================
