@@ -145,24 +145,74 @@
     }
   }
 
-  /* ---- PORTFOLIO FILTERS ---- */
+  /* ---- PORTFOLIO FILTERS + LOAD MORE ---- */
   const filters = document.querySelectorAll(".filter");
   const pfItems = document.querySelectorAll(".pf-item");
+  const loadMoreBtn = document.getElementById("loadMoreBtn");
+  const loadMoreContainer = document.getElementById("portfolioLoadmore");
+
+  const isMobile = () => window.innerWidth <= 768;
+  let extrasLoaded = false;
+  let currentFilter = "all";
+
+  function applyMobileHiding() {
+    pfItems.forEach((item) => {
+      if (item.dataset.extra === "true") {
+        item.classList.add("mobile-hidden");
+      }
+    });
+    if (loadMoreContainer) loadMoreContainer.style.display = "block";
+  }
+
+  function removeMobileHiding() {
+    pfItems.forEach((item) => item.classList.remove("mobile-hidden"));
+    if (loadMoreContainer) loadMoreContainer.style.display = "none";
+  }
+
+  function applyFilter(f) {
+    currentFilter = f;
+    pfItems.forEach((item) => {
+      const cats = item.getAttribute("data-cat") || "";
+      const matchesFilter = f === "all" || cats.split(" ").includes(f);
+      if (!matchesFilter) {
+        item.classList.add("hidden");
+        item.classList.remove("mobile-hidden");
+      } else {
+        item.classList.remove("hidden");
+        // On mobile with "all" filter and extras not loaded, keep extras hidden
+        if (f === "all" && isMobile() && !extrasLoaded && item.dataset.extra === "true") {
+          item.classList.add("mobile-hidden");
+        } else {
+          item.classList.remove("mobile-hidden");
+        }
+      }
+    });
+
+    // Show load more only when "all" filter active on mobile with extras not loaded
+    if (loadMoreContainer) {
+      const showBtn = isMobile() && f === "all" && !extrasLoaded;
+      loadMoreContainer.style.display = showBtn ? "block" : "none";
+    }
+  }
+
+  // Init: hide extras on mobile
+  if (isMobile() && !extrasLoaded) {
+    applyMobileHiding();
+  }
+
+  if (loadMoreBtn) {
+    loadMoreBtn.addEventListener("click", () => {
+      extrasLoaded = true;
+      removeMobileHiding();
+      applyFilter(currentFilter);
+    });
+  }
 
   filters.forEach((btn) => {
     btn.addEventListener("click", () => {
       filters.forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
-
-      const f = btn.getAttribute("data-filter");
-      pfItems.forEach((item) => {
-        const cats = item.getAttribute("data-cat") || "";
-        if (f === "all" || cats.split(" ").includes(f)) {
-          item.classList.remove("hidden");
-        } else {
-          item.classList.add("hidden");
-        }
-      });
+      applyFilter(btn.getAttribute("data-filter"));
     });
   });
 
@@ -178,7 +228,7 @@
 
   function getVisibleImages() {
     return Array.from(pfItems)
-      .filter((i) => !i.classList.contains("hidden"))
+      .filter((i) => !i.classList.contains("hidden") && !i.classList.contains("mobile-hidden"))
       .map((i) => i.querySelector("img"));
   }
 

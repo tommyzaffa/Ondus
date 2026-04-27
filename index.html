@@ -199,17 +199,27 @@
 
       <!-- GUEST + COLLABORAZIONE -->
       <div class="artists__extras reveal">
-        <div class="artists__extra">
-          <span class="artists__extra-label" data-i18n="artists.guestLabel">Guest</span>
-          <h3 class="artists__extra-name">Alessia</h3>
-          <span class="artist__spec" data-i18n="artists.a2.spec">Tatuaggi</span>
-        </div>
-        <div class="artists__extra-divider"></div>
-        <div class="artists__extra">
-          <span class="artists__extra-label" data-i18n="artists.collabLabel">Collaborazione</span>
-          <h3 class="artists__extra-name">Fabiana di Fabulous Tooth Gems</h3>
-          <span class="artist__spec" data-i18n="artists.a3.spec">Gemme dentali</span>
-        </div>
+        <article class="artists__extra-card">
+          <div class="artists__extra-img">
+            <img src="img/alessia.jpg" alt="Alessia" loading="lazy" />
+          </div>
+          <div class="artists__extra-info">
+            <span class="artists__extra-label" data-i18n="artists.guestLabel">Guest</span>
+            <h3 class="artists__extra-name">Alessia</h3>
+            <span class="artist__spec" data-i18n="artists.a2.spec">Tatuaggi</span>
+          </div>
+        </article>
+        <article class="artists__extra-card">
+          <div class="artists__extra-img">
+            <img src="img/fabiana.jpg" alt="Fabiana" loading="lazy" />
+          </div>
+          <div class="artists__extra-info">
+            <span class="artists__extra-label" data-i18n="artists.collabLabel">Collaborazione</span>
+            <h3 class="artists__extra-name">Fabiana</h3>
+            <p class="artists__extra-sub">Fabulous Tooth Gems</p>
+            <span class="artist__spec" data-i18n="artists.a3.spec">Gemme dentali</span>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -229,19 +239,45 @@
       </div>
 
       <div class="portfolio__grid reveal" id="portfolioGrid">
-        <figure class="pf-item pf-insta" data-cat="tattoo"><img src="img/IMG_2577.PNG" alt="Teschio blackwork" loading="lazy"/></figure>
-        <figure class="pf-item pf-item--tall pf-insta" data-cat="tattoo"><img src="img/IMG_2576.PNG" alt="Angelo realistico schiena" loading="lazy"/></figure>
-        <figure class="pf-item pf-insta" data-cat="piercing"><img src="img/IMG_2566.PNG" alt="Piercing sopracciglio" loading="lazy"/></figure>
-        <figure class="pf-item pf-insta" data-cat="tattoo"><img src="img/IMG_2574.PNG" alt="Tigre blackwork sulla mano" loading="lazy"/></figure>
-        <figure class="pf-item pf-insta" data-cat="tattoo"><img src="img/IMG_2572.PNG" alt="Tatuaggio Ondus" loading="lazy"/></figure>
-        <figure class="pf-item pf-item--wide pf-insta" data-cat="tattoo"><img src="img/IMG_2575.PNG" alt="Rose e farfalle realism" loading="lazy"/></figure>
-        <figure class="pf-item pf-insta" data-cat="tattoo"><img src="img/IMG_2573.PNG" alt="Tatuaggio colorato Pokemon" loading="lazy"/></figure>
-        <figure class="pf-item pf-insta" data-cat="piercing"><img src="img/IMG_2568.PNG" alt="Bridge piercing" loading="lazy"/></figure>
-        <figure class="pf-item pf-item--tall pf-insta" data-cat="tattoo"><img src="img/IMG_2571.PNG" alt="Crocifisso realism petto" loading="lazy"/></figure>
-        <figure class="pf-item pf-insta" data-cat="tattoo"><img src="img/IMG_2578.PNG" alt="Farfalla con occhio" loading="lazy"/></figure>
-        <figure class="pf-item pf-insta" data-cat="tattoo"><img src="img/IMG_2570.PNG" alt="Piume tatuaggio sul braccio" loading="lazy"/></figure>
-        <figure class="pf-item pf-insta" data-cat="piercing"><img src="img/IMG_2569.PNG" alt="Piercing orecchio - lobo e conch" loading="lazy"/></figure>
-        <figure class="pf-item pf-insta" data-cat="tattoo"><img src="img/IMG_2579.PNG" alt="Montagne blackwork" loading="lazy"/></figure>
+        <!-- Visibili subito (su mobile: 8 iniziali) -->
+        <figure class="pf-item" data-cat="piercing"><img src="img/piercing_1.jpg" alt="Piercing" loading="lazy"/></figure>
+        <figure class="pf-item" data-cat="tattoo"><img src="img/cristo.jpg" alt="Cristo realistico" loading="lazy"/></figure>
+        <figure class="pf-item" data-cat="tattoo"><img src="img/farfalla.jpg" alt="Farfalla" loading="lazy"/></figure>
+        <figure class="pf-item" data-cat="piercing"><img src="img/piercing_3.jpg" alt="Piercing" loading="lazy"/></figure>
+        <figure class="pf-item" data-cat="tattoo"><img src="img/elefante.jpg" alt="Elefante" loading="lazy"/></figure>
+        <figure class="pf-item" data-cat="tattoo"><img src="img/scream.jpg" alt="Scream" loading="lazy"/></figure>
+        <figure class="pf-item" data-cat="piercing"><img src="img/piercing_5.jpg" alt="Piercing" loading="lazy"/></figure>
+        <figure class="pf-item" data-cat="tattoo"><img src="img/cane.jpg" alt="Cane" loading="lazy"/></figure>
+
+        <!-- Extra (visibili su desktop, nascosti su mobile finché non si clicca "Carica altri") -->
+        <figure class="pf-item" data-cat="tattoo" data-extra="true"><img src="img/ali.jpg" alt="Ali" loading="lazy"/></figure>
+        <figure class="pf-item" data-cat="piercing" data-extra="true"><img src="img/piercing_2.jpg" alt="Piercing" loading="lazy"/></figure>
+        <figure class="pf-item" data-cat="tattoo" data-extra="true"><img src="img/avocado.jpg" alt="Avocado" loading="lazy"/></figure>
+        <figure class="pf-item" data-cat="tattoo" data-extra="true"><img src="img/bismarck.jpg" alt="Bismarck" loading="lazy"/></figure>
+        <figure class="pf-item" data-cat="piercing" data-extra="true"><img src="img/piercing_4.jpg" alt="Piercing" loading="lazy"/></figure>
+        <figure class="pf-item" data-cat="tattoo" data-extra="true"><img src="img/catene.jpg" alt="Catene" loading="lazy"/></figure>
+        <figure class="pf-item" data-cat="tattoo" data-extra="true"><img src="img/cocinella.jpg" alt="Coccinella" loading="lazy"/></figure>
+        <figure class="pf-item" data-cat="piercing" data-extra="true"><img src="img/piercing_6.jpg" alt="Piercing" loading="lazy"/></figure>
+        <figure class="pf-item" data-cat="tattoo" data-extra="true"><img src="img/filo.jpg" alt="Filo" loading="lazy"/></figure>
+        <figure class="pf-item" data-cat="tattoo" data-extra="true"><img src="img/fiocco.jpg" alt="Fiocco" loading="lazy"/></figure>
+        <figure class="pf-item" data-cat="piercing" data-extra="true"><img src="img/piercing_7.jpg" alt="Piercing" loading="lazy"/></figure>
+        <figure class="pf-item" data-cat="tattoo" data-extra="true"><img src="img/fiori.jpg" alt="Fiori" loading="lazy"/></figure>
+        <figure class="pf-item" data-cat="tattoo" data-extra="true"><img src="img/giovanna.jpg" alt="Giovanna" loading="lazy"/></figure>
+        <figure class="pf-item" data-cat="tattoo" data-extra="true"><img src="img/indiani.jpg" alt="Indiani" loading="lazy"/></figure>
+        <figure class="pf-item" data-cat="tattoo" data-extra="true"><img src="img/jason.jpg" alt="Jason" loading="lazy"/></figure>
+        <figure class="pf-item" data-cat="tattoo" data-extra="true"><img src="img/loca.jpg" alt="Loca" loading="lazy"/></figure>
+        <figure class="pf-item" data-cat="tattoo" data-extra="true"><img src="img/nomi.jpg" alt="Nomi" loading="lazy"/></figure>
+        <figure class="pf-item" data-cat="tattoo" data-extra="true"><img src="img/nonna.jpg" alt="Nonna" loading="lazy"/></figure>
+        <figure class="pf-item" data-cat="tattoo" data-extra="true"><img src="img/pikachu.jpg" alt="Pikachu" loading="lazy"/></figure>
+        <figure class="pf-item" data-cat="tattoo" data-extra="true"><img src="img/piume.jpg" alt="Piume" loading="lazy"/></figure>
+        <figure class="pf-item" data-cat="tattoo" data-extra="true"><img src="img/ragno.jpg" alt="Ragno" loading="lazy"/></figure>
+        <figure class="pf-item" data-cat="tattoo" data-extra="true"><img src="img/serpente.jpg" alt="Serpente" loading="lazy"/></figure>
+        <figure class="pf-item" data-cat="tattoo" data-extra="true"><img src="img/simpson.jpg" alt="Simpson" loading="lazy"/></figure>
+        <figure class="pf-item" data-cat="tattoo" data-extra="true"><img src="img/spongebob.jpg" alt="Spongebob" loading="lazy"/></figure>
+      </div>
+
+      <div class="portfolio__loadmore reveal" id="portfolioLoadmore">
+        <button class="btn btn--ghost btn--light" id="loadMoreBtn">Carica altri</button>
       </div>
 
       <div class="portfolio__cta reveal">
