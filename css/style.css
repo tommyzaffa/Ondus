@@ -738,6 +738,29 @@ ul { list-style: none; }
 .artists__extra-info .artist__spec {
   margin-bottom: 0;
 }
+.artists__extra-contact {
+  font-size: .82rem;
+  opacity: .7;
+  margin: .6rem 0 .5rem;
+  line-height: 1.4;
+}
+.artists__extra-insta-btn {
+  display: inline-block;
+  margin-top: .4rem;
+  padding: .45rem 1rem;
+  font-size: .78rem;
+  font-family: var(--f-sans);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--c-bg);
+  background: var(--c-accent);
+  border-radius: 2px;
+  text-decoration: none;
+  transition: opacity .2s;
+}
+.artists__extra-insta-btn:hover {
+  opacity: .8;
+}
 @media (max-width: 560px) {
   .artists__extras {
     grid-template-columns: 1fr;

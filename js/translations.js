@@ -53,6 +53,8 @@ const TRANSLATIONS = {
     "artists.a2.spec": "Tatuaggi",
     "artists.collabLabel": "Collaborazione",
     "artists.a3.spec": "Gemme dentali",
+    "artists.a3.bookContact": "Per fissare un appuntamento con Fabiana, contattala direttamente su Instagram.",
+    "artists.a3.bookBtn": "Contattala su Instagram",
 
     "portfolio.eyebrow": "04 — Portfolio",
     "portfolio.titleA": "Inchiostro",
@@ -143,6 +145,8 @@ const TRANSLATIONS = {
     "artists.a2.spec": "Tattoos",
     "artists.collabLabel": "Collaboration",
     "artists.a3.spec": "Dental gems",
+    "artists.a3.bookContact": "To book an appointment with Fabiana, contact her directly on Instagram.",
+    "artists.a3.bookBtn": "Contact her on Instagram",
 
     "portfolio.eyebrow": "04 — Portfolio",
     "portfolio.titleA": "Ink",
@@ -233,6 +237,8 @@ const TRANSLATIONS = {
     "artists.a2.spec": "Tattoos",
     "artists.collabLabel": "Kooperation",
     "artists.a3.spec": "Zahnschmuck",
+    "artists.a3.bookContact": "Für einen Termin mit Fabiana kontaktiere sie direkt auf Instagram.",
+    "artists.a3.bookBtn": "Auf Instagram kontaktieren",
 
     "portfolio.eyebrow": "04 — Portfolio",
     "portfolio.titleA": "Tinte",
@@ -323,6 +329,8 @@ const TRANSLATIONS = {
     "artists.a2.spec": "Tatouages",
     "artists.collabLabel": "Collaboration",
     "artists.a3.spec": "Gemmes dentaires",
+    "artists.a3.bookContact": "Pour prendre rendez-vous avec Fabiana, contacte-la directement sur Instagram.",
+    "artists.a3.bookBtn": "La contacter sur Instagram",
 
     "portfolio.eyebrow": "04 — Portfolio",
     "portfolio.titleA": "Encre",
