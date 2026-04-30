@@ -93,7 +93,9 @@ const TRANSLATIONS = {
 
     "footer.tagline": "Ink since always · Vezia / Lugano",
     "footer.rights": "Tutti i diritti riservati",
-    "footer.developedBy": "Sito sviluppato da"
+    "footer.developedBy": "Sito sviluppato da",
+
+    "banner.vacation": "Lo studio sarà chiuso dal 4 al 9 maggio per ferie. Restiamo comunque disponibili per fissare appuntamenti e per essere contattati: scrivici o chiamaci."
   },
 
   en: {
@@ -185,7 +187,9 @@ const TRANSLATIONS = {
 
     "footer.tagline": "Ink since always · Vezia / Lugano",
     "footer.rights": "All rights reserved",
-    "footer.developedBy": "Website developed by"
+    "footer.developedBy": "Website developed by",
+
+    "banner.vacation": "The studio will be closed from May 4 to May 9 for holidays. We're still available to schedule appointments and to be reached — write or call us."
   },
 
   de: {
@@ -277,7 +281,9 @@ const TRANSLATIONS = {
 
     "footer.tagline": "Ink since always · Vezia / Lugano",
     "footer.rights": "Alle Rechte vorbehalten",
-    "footer.developedBy": "Website entwickelt von"
+    "footer.developedBy": "Website entwickelt von",
+
+    "banner.vacation": "Das Studio bleibt vom 4. bis 9. Mai wegen Ferien geschlossen. Wir sind weiterhin erreichbar für Terminvereinbarungen — schreib oder ruf uns einfach an."
   },
 
   fr: {
@@ -369,6 +375,8 @@ const TRANSLATIONS = {
 
     "footer.tagline": "Ink since always · Vezia / Lugano",
     "footer.rights": "Tous droits réservés",
-    "footer.developedBy": "Site développé par"
+    "footer.developedBy": "Site développé par",
+
+    "banner.vacation": "Le studio sera fermé du 4 au 9 mai pour les vacances. Nous restons disponibles pour fixer des rendez-vous et être contactés — écris-nous ou appelle-nous."
   }
 };
