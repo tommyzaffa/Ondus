@@ -24,11 +24,64 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Metal+Mania&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <script>
+    // Lock scroll during intro animation (avoids flash on slow JS load).
+    // Skipped automatically if user prefers reduced motion.
+    (function () {
+      try {
+        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!reduce) document.documentElement.classList.add('intro-active');
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
 
   <!-- Grain texture overlay -->
   <div class="grain"></div>
+
+  <!-- ==============================
+       INTRO ANIMATION (apertura sito)
+       Si gioca al primo caricamento.
+       Per disattivarla, commenta il blocco
+       <div class="intro">...</div> qui sotto.
+       ============================== -->
+  <div class="intro" id="intro" aria-hidden="true">
+    <div class="intro__top"></div>
+    <div class="intro__bottom"></div>
+    <div class="intro__content">
+      <div class="intro__logo">
+        <img src="img/icon.jpg" alt="" />
+        <span class="intro__ring"></span>
+      </div>
+      <div class="intro__line"><span></span></div>
+      <h1 class="intro__title" aria-label="ONDUS">
+        <span>O</span><span>N</span><span>D</span><span>U</span><span>S</span>
+      </h1>
+      <p class="intro__sub">TATTOO · PIERCING · VEZIA</p>
+    </div>
+  </div>
+
+  <!--
+    ============================================
+    AVVISO FERIE / CHIUSURA STUDIO
+    Per ATTIVARE il banner: rimuovi questo blocco
+    di commenti (le righe "open" e "close" qui sotto)
+    e il banner sara' visibile in tutte le lingue.
+    Per DISATTIVARE: ricommenta il blocco.
+    ============================================
+  -->
+  <!-- BANNER:OPEN
+  <aside class="alert-banner" id="alertBanner" role="status" aria-live="polite">
+    <div class="alert-banner__inner">
+      <span class="alert-banner__dot" aria-hidden="true"></span>
+      <p class="alert-banner__text" data-i18n="banner.vacation">
+        Studio chiuso dal 4 al 9 maggio per ferie. Restiamo comunque disponibili per fissare appuntamenti — scrivici o chiamaci.
+      </p>
+      <button class="alert-banner__close" id="alertBannerClose" aria-label="Chiudi">✕</button>
+    </div>
+  </aside>
+  BANNER:CLOSE -->
 
   <!-- NAVIGATION -->
   <header class="nav" id="nav">

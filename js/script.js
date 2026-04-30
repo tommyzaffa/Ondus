@@ -5,6 +5,66 @@
 (function () {
   "use strict";
 
+  /* ---- INTRO ANIMATION ---- */
+  const intro = document.getElementById("intro");
+  const reduceMotion = window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function endIntro() {
+    if (!intro) return;
+    intro.classList.add("is-done");
+    document.documentElement.classList.remove("intro-active");
+  }
+
+  if (intro) {
+    if (reduceMotion) {
+      endIntro();
+    } else {
+      // The intro plays via CSS; remove it when its exit animation finishes,
+      // with a safety timeout in case the animationend event doesn't fire.
+      let ended = false;
+      const finish = () => { if (!ended) { ended = true; endIntro(); } };
+      intro.addEventListener("animationend", (e) => {
+        if (e.target === intro) finish();
+      });
+      // Click anywhere to skip
+      intro.addEventListener("click", finish);
+      // Safety net (CSS timeline ends around 3.2s)
+      setTimeout(finish, 4000);
+    }
+  } else {
+    document.documentElement.classList.remove("intro-active");
+  }
+
+  /* ---- ALERT BANNER (avviso ferie) ---- */
+  const alertBanner = document.getElementById("alertBanner");
+  const alertBannerClose = document.getElementById("alertBannerClose");
+
+  function syncBannerHeight() {
+    if (!alertBanner) return;
+    const h = alertBanner.classList.contains("is-hidden")
+      ? 0
+      : alertBanner.offsetHeight;
+    document.documentElement.style.setProperty("--banner-h", h + "px");
+  }
+
+  if (alertBanner) {
+    document.body.classList.add("has-banner");
+    syncBannerHeight();
+    window.addEventListener("resize", syncBannerHeight, { passive: true });
+
+    if (alertBannerClose) {
+      alertBannerClose.addEventListener("click", () => {
+        alertBanner.classList.add("is-hidden");
+        // Wait for the slide-up transition before zeroing the offset
+        setTimeout(() => {
+          document.body.classList.remove("has-banner");
+          document.documentElement.style.setProperty("--banner-h", "0px");
+        }, 400);
+      });
+    }
+  }
+
   /* ---- YEAR ---- */
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
