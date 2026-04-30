@@ -64,14 +64,18 @@
 
   <!--
     ============================================
-    AVVISO FERIE / CHIUSURA STUDIO
-    Per ATTIVARE il banner: rimuovi questo blocco
-    di commenti (le righe "open" e "close" qui sotto)
-    e il banner sara' visibile in tutte le lingue.
-    Per DISATTIVARE: ricommenta il blocco.
+    AVVISO FERIE / CHIUSURA STUDIO  [ATTIVO]
+    Per DISATTIVARE: avvolgi il blocco <aside ...></aside>
+    qui sotto fra i marker "BANNER:OPEN" e "BANNER:CLOSE"
+    dentro un commento HTML, come segue:
+
+      <!-- BANNER:OPEN
+      <aside class="alert-banner" ...>...</aside>
+      BANNER:CLOSE - - >    (rimuovi gli spazi tra - - >)
+
+    Le traduzioni IT/EN/DE/FR sono gia' pronte.
     ============================================
   -->
-  <!-- BANNER:OPEN
   <aside class="alert-banner" id="alertBanner" role="status" aria-live="polite">
     <div class="alert-banner__inner">
       <span class="alert-banner__dot" aria-hidden="true"></span>
@@ -81,7 +85,6 @@
       <button class="alert-banner__close" id="alertBannerClose" aria-label="Chiudi">✕</button>
     </div>
   </aside>
-  BANNER:CLOSE -->
 
   <!-- NAVIGATION -->
   <header class="nav" id="nav">
