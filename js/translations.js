@@ -82,6 +82,9 @@ const TRANSLATIONS = {
     "contact.walkinTitle": "Appuntamenti & Walk-in",
     "contact.walkin": "Accettiamo sia clienti su appuntamento che walk-in. Chiamaci prima di passare per essere sicuri di trovarci disponibili.",
     "contact.sun": "aperto tutto il giorno",
+    "map.consent": "La mappa viene caricata da Google solo dopo il tuo consenso.",
+    "map.load": "Carica mappa",
+    "map.open": "Apri in Google Maps",
 
     "days.mon": "Lunedì",
     "days.tue": "Martedì",
@@ -176,6 +179,9 @@ const TRANSLATIONS = {
     "contact.walkinTitle": "Appointments & Walk-in",
     "contact.walkin": "We welcome both appointments and walk-ins. Please call ahead to make sure we're available.",
     "contact.sun": "open all day",
+    "map.consent": "The map is loaded from Google only after your consent.",
+    "map.load": "Load map",
+    "map.open": "Open in Google Maps",
 
     "days.mon": "Monday",
     "days.tue": "Tuesday",
@@ -270,6 +276,9 @@ const TRANSLATIONS = {
     "contact.walkinTitle": "Termine & Walk-in",
     "contact.walkin": "Wir nehmen sowohl Termine als auch Walk-ins entgegen. Bitte rufe vorher an, um sicherzugehen, dass wir verfügbar sind.",
     "contact.sun": "ganztägig geöffnet",
+    "map.consent": "Die Karte wird erst nach deiner Zustimmung von Google geladen.",
+    "map.load": "Karte laden",
+    "map.open": "In Google Maps öffnen",
 
     "days.mon": "Montag",
     "days.tue": "Dienstag",
@@ -364,6 +373,9 @@ const TRANSLATIONS = {
     "contact.walkinTitle": "Rendez-vous & Walk-in",
     "contact.walkin": "Nous accueillons sur rendez-vous et en walk-in. Merci d'appeler avant de passer pour vous assurer de notre disponibilité.",
     "contact.sun": "ouvert toute la journée",
+    "map.consent": "La carte est chargée depuis Google uniquement après votre consentement.",
+    "map.load": "Charger la carte",
+    "map.open": "Ouvrir dans Google Maps",
 
     "days.mon": "Lundi",
     "days.tue": "Mardi",
