@@ -1156,6 +1156,26 @@ ul { list-style: none; }
   flex-direction: row;
   gap: 1.8rem;
 }
+.legal-lang {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+}
+.legal-lang button {
+  border: 1px solid var(--line);
+  background: rgba(245,242,236,.08);
+  color: var(--white);
+  padding: .45rem .62rem;
+  border-radius: 999px;
+  font-family: var(--f-head);
+  letter-spacing: .12em;
+  font-size: .72rem;
+}
+.legal-lang button.is-active {
+  background: var(--white);
+  border-color: var(--white);
+  color: var(--black);
+}
 .legal-page {
   padding: clamp(7rem, 12vw, 10rem) 0 5rem;
   background: var(--c-bg);

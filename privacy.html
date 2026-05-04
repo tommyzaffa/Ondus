@@ -29,67 +29,25 @@
         <ul>
           <li><a href="index.html#studio">Studio</a></li>
           <li><a href="index.html#portfolio">Portfolio</a></li>
-          <li><a href="index.html#contact">Contatti</a></li>
+          <li><a href="index.html#contact" data-privacy-field="navContact">Contatti</a></li>
         </ul>
       </nav>
+      <div class="legal-lang" data-privacy-lang>
+        <button type="button" data-lang="it">IT</button>
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="de">DE</button>
+        <button type="button" data-lang="fr">FR</button>
+      </div>
     </div>
   </header>
 
   <main class="legal-page">
     <section class="container legal-wrap">
-      <p class="section__kicker">Privacy &amp; Cookie</p>
-      <h1 class="section__title">Informativa privacy e cookie</h1>
-      <p class="legal-updated">Ultimo aggiornamento: 4 maggio 2026</p>
+      <p class="section__kicker" data-privacy-field="kicker">Privacy &amp; Cookie</p>
+      <h1 class="section__title" data-privacy-field="title">Informativa privacy e cookie</h1>
+      <p class="legal-updated" data-privacy-field="updated">Ultimo aggiornamento: 4 maggio 2026</p>
 
-      <article class="legal-card">
-        <h2>Titolare del sito</h2>
-        <p>
-          Ondus Tattoo, Via San Gottardo 30, 6943 Vezia, Svizzera.
-          Per contatti: <a href="mailto:ondus.tattoo@outlook.com">ondus.tattoo@outlook.com</a>
-          oppure <a href="tel:+41792118794">+41 79 211 87 94</a>.
-        </p>
-
-        <h2>Dati trattati</h2>
-        <p>
-          Il sito e' una vetrina statica dello studio. Non sono presenti account, pagamenti online,
-          newsletter o strumenti di profilazione. Durante la navigazione possono essere trattati dati
-          tecnici necessari al funzionamento del sito, come indirizzo IP, browser, dispositivo, data e ora
-          della richiesta, tramite i normali log del provider di hosting.
-        </p>
-        <p>
-          Se prenoti tramite Setmore, invii una mail o apri Instagram/Facebook, i dati vengono trattati
-          anche dai rispettivi servizi secondo le loro informative.
-        </p>
-
-        <h2>Cookie e tecnologie simili</h2>
-        <p>
-          Il sito non usa cookie di profilazione, pixel pubblicitari, Google Analytics, Meta Pixel, Hotjar,
-          Clarity o strumenti simili. La lingua scelta puo' essere salvata nel browser tramite
-          <code>localStorage</code> con la chiave <code>ondus_lang</code>: serve solo a ricordare la
-          preferenza linguistica e non viene usata per tracciare l'utente.
-        </p>
-
-        <h2>Servizi di terze parti</h2>
-        <p>
-          Il sito carica font da Google Fonts. La mappa di Google Maps non viene caricata automaticamente:
-          parte solo quando selezioni il pulsante "Carica mappa". I link a Setmore, Instagram, Facebook e
-          Google Maps aprono servizi esterni, che possono trattare dati secondo le rispettive policy.
-        </p>
-
-        <h2>Finalita' e conservazione</h2>
-        <p>
-          I dati tecnici sono usati per rendere disponibile e sicuro il sito. I dati forniti volontariamente
-          tramite contatti diretti o servizi esterni sono usati per rispondere alle richieste, gestire
-          appuntamenti o fornire informazioni sui servizi dello studio. I log tecnici sono conservati per il
-          tempo necessario a sicurezza e manutenzione.
-        </p>
-
-        <h2>Diritti</h2>
-        <p>
-          Puoi chiedere informazioni sui dati che ti riguardano, la rettifica o la cancellazione quando
-          applicabile. Puoi cancellare i dati salvati localmente tramite le impostazioni del browser.
-        </p>
-      </article>
+      <article class="legal-card" id="privacyContent"></article>
     </section>
   </main>
 
@@ -97,11 +55,111 @@
     <div class="footer__inner">
       <div class="footer__meta">
         <span>© <span id="year"></span> Ondus Tattoo</span>
-        <a href="index.html">Torna al sito</a>
+        <a href="index.html" data-privacy-field="backLink">Torna al sito</a>
       </div>
     </div>
   </footer>
 
+  <script>
+  (function () {
+    const STORAGE_KEY = 'ondus_lang';
+    const fallback = 'it';
+    const copy = {
+      it: {
+        title: 'Informativa privacy e cookie',
+        updated: 'Ultimo aggiornamento: 4 maggio 2026',
+        navContact: 'Contatti',
+        backLink: 'Torna al sito',
+        meta: 'Privacy e cookie policy del sito Ondus Tattoo, studio tattoo e piercing a Vezia/Lugano.',
+        sections: [
+          ['Titolare del sito', ['Ondus Tattoo, Via San Gottardo 30, 6943 Vezia, Svizzera. Per contatti: <a href="mailto:ondus.tattoo@outlook.com">ondus.tattoo@outlook.com</a> oppure <a href="tel:+41792118794">+41 79 211 87 94</a>.']],
+          ['Dati trattati', ['Il sito e&apos; una vetrina statica dello studio. Non sono presenti account, pagamenti online, newsletter o strumenti di profilazione. Durante la navigazione possono essere trattati dati tecnici necessari al funzionamento del sito, come indirizzo IP, browser, dispositivo, data e ora della richiesta, tramite i normali log del provider di hosting.', 'Se prenoti tramite Setmore, invii una mail o apri Instagram/Facebook, i dati vengono trattati anche dai rispettivi servizi secondo le loro informative.']],
+          ['Cookie e tecnologie simili', ['Il sito non usa cookie di profilazione, pixel pubblicitari, Google Analytics, Meta Pixel, Hotjar, Clarity o strumenti simili. La lingua scelta puo&apos; essere salvata nel browser tramite <code>localStorage</code> con la chiave <code>ondus_lang</code>: serve solo a ricordare la preferenza linguistica e non viene usata per tracciare l&apos;utente.']],
+          ['Servizi di terze parti', ['Il sito carica font da Google Fonts. La mappa di Google Maps non viene caricata automaticamente: parte solo quando selezioni il pulsante "Carica mappa". I link a Setmore, Instagram, Facebook e Google Maps aprono servizi esterni, che possono trattare dati secondo le rispettive policy.']],
+          ['Finalita&apos; e conservazione', ['I dati tecnici sono usati per rendere disponibile e sicuro il sito. I dati forniti volontariamente tramite contatti diretti o servizi esterni sono usati per rispondere alle richieste, gestire appuntamenti o fornire informazioni sui servizi dello studio. I log tecnici sono conservati per il tempo necessario a sicurezza e manutenzione.']],
+          ['Diritti', ['Puoi chiedere informazioni sui dati che ti riguardano, la rettifica o la cancellazione quando applicabile. Puoi cancellare i dati salvati localmente tramite le impostazioni del browser.']]
+        ]
+      },
+      en: {
+        title: 'Privacy and cookie policy',
+        updated: 'Last updated: 4 May 2026',
+        navContact: 'Contact',
+        backLink: 'Back to the site',
+        meta: 'Privacy and cookie policy for Ondus Tattoo, tattoo and piercing studio in Vezia/Lugano.',
+        sections: [
+          ['Website owner', ['Ondus Tattoo, Via San Gottardo 30, 6943 Vezia, Switzerland. Contact: <a href="mailto:ondus.tattoo@outlook.com">ondus.tattoo@outlook.com</a> or <a href="tel:+41792118794">+41 79 211 87 94</a>.']],
+          ['Data processed', ['This website is a static showcase site for the studio. It does not provide user accounts, online payments, newsletters or profiling tools. When you browse the site, technical data needed to operate the website may be processed, such as IP address, browser, device, date and time of the request, through normal hosting provider logs.', 'If you book through Setmore, send an email or open Instagram/Facebook, data is also processed by the relevant services under their own policies.']],
+          ['Cookies and similar technologies', ['The site does not use profiling cookies, advertising pixels, Google Analytics, Meta Pixel, Hotjar, Clarity or similar tools. The selected language may be stored in the browser through <code>localStorage</code> using the key <code>ondus_lang</code>: it is used only to remember the language preference and is not used to track users.']],
+          ['Third-party services', ['The site loads fonts from Google Fonts. Google Maps is not loaded automatically: it starts only when you select the "Load map" button. Links to Setmore, Instagram, Facebook and Google Maps open external services, which may process data under their own policies.']],
+          ['Purposes and retention', ['Technical data is used to make the website available and secure. Data voluntarily provided through direct contacts or external services is used to answer requests, manage appointments or provide information about the studio services. Technical logs are retained for the time needed for security and maintenance.']],
+          ['Rights', ['You may request information about personal data concerning you, correction or deletion where applicable. You can delete locally stored data through your browser settings.']]
+        ]
+      },
+      de: {
+        title: 'Datenschutz- und Cookie-Richtlinie',
+        updated: 'Letzte Aktualisierung: 4. Mai 2026',
+        navContact: 'Kontakt',
+        backLink: 'Zurueck zur Website',
+        meta: 'Datenschutz- und Cookie-Richtlinie fuer Ondus Tattoo, Tattoo- und Piercingstudio in Vezia/Lugano.',
+        sections: [
+          ['Betreiber der Website', ['Ondus Tattoo, Via San Gottardo 30, 6943 Vezia, Schweiz. Kontakt: <a href="mailto:ondus.tattoo@outlook.com">ondus.tattoo@outlook.com</a> oder <a href="tel:+41792118794">+41 79 211 87 94</a>.']],
+          ['Verarbeitete Daten', ['Diese Website ist eine statische Praesenzseite des Studios. Es gibt keine Benutzerkonten, Online-Zahlungen, Newsletter oder Profiling-Tools. Beim Besuch der Website koennen technische Daten verarbeitet werden, die fuer den Betrieb erforderlich sind, z. B. IP-Adresse, Browser, Geraet, Datum und Uhrzeit der Anfrage, ueber die normalen Protokolle des Hosting-Anbieters.', 'Wenn du ueber Setmore buchst, eine E-Mail sendest oder Instagram/Facebook oeffnest, werden Daten auch von den jeweiligen Diensten nach deren eigenen Richtlinien verarbeitet.']],
+          ['Cookies und aehnliche Technologien', ['Die Website verwendet keine Profiling-Cookies, Werbepixel, Google Analytics, Meta Pixel, Hotjar, Clarity oder aehnliche Tools. Die gewaehlte Sprache kann im Browser ueber <code>localStorage</code> mit dem Schluessel <code>ondus_lang</code> gespeichert werden: Sie dient nur dazu, die Sprachpraeferenz zu merken, und wird nicht zur Nachverfolgung verwendet.']],
+          ['Dienste von Dritten', ['Die Website laedt Schriftarten von Google Fonts. Google Maps wird nicht automatisch geladen: Die Karte startet erst, wenn du die Schaltflaeche "Karte laden" auswaehlst. Links zu Setmore, Instagram, Facebook und Google Maps oeffnen externe Dienste, die Daten nach ihren eigenen Richtlinien verarbeiten koennen.']],
+          ['Zwecke und Aufbewahrung', ['Technische Daten werden verwendet, um die Website verfuegbar und sicher bereitzustellen. Daten, die freiwillig ueber direkte Kontakte oder externe Dienste angegeben werden, werden verwendet, um Anfragen zu beantworten, Termine zu verwalten oder Informationen zu den Leistungen des Studios bereitzustellen. Technische Protokolle werden so lange aufbewahrt, wie es fuer Sicherheit und Wartung erforderlich ist.']],
+          ['Rechte', ['Du kannst Auskunft ueber dich betreffende personenbezogene Daten sowie Berichtigung oder Loeschung verlangen, soweit dies anwendbar ist. Lokal gespeicherte Daten kannst du ueber die Browsereinstellungen loeschen.']]
+        ]
+      },
+      fr: {
+        title: 'Politique de confidentialite et cookies',
+        updated: 'Derniere mise a jour : 4 mai 2026',
+        navContact: 'Contact',
+        backLink: 'Retour au site',
+        meta: 'Politique de confidentialite et cookies du site Ondus Tattoo, studio tattoo et piercing a Vezia/Lugano.',
+        sections: [
+          ['Responsable du site', ['Ondus Tattoo, Via San Gottardo 30, 6943 Vezia, Suisse. Contact : <a href="mailto:ondus.tattoo@outlook.com">ondus.tattoo@outlook.com</a> ou <a href="tel:+41792118794">+41 79 211 87 94</a>.']],
+          ['Donnees traitees', ['Ce site est un site vitrine statique du studio. Il ne propose pas de comptes utilisateurs, paiements en ligne, newsletter ou outils de profilage. Lors de la navigation, des donnees techniques necessaires au fonctionnement du site peuvent etre traitees, comme l&apos;adresse IP, le navigateur, l&apos;appareil, la date et l&apos;heure de la requete, via les journaux habituels du fournisseur d&apos;hebergement.', 'Si vous reservez via Setmore, envoyez un e-mail ou ouvrez Instagram/Facebook, les donnees sont egalement traitees par les services concernes selon leurs propres politiques.']],
+          ['Cookies et technologies similaires', ['Le site n&apos;utilise pas de cookies de profilage, pixels publicitaires, Google Analytics, Meta Pixel, Hotjar, Clarity ou outils similaires. La langue choisie peut etre enregistree dans le navigateur via <code>localStorage</code> avec la cle <code>ondus_lang</code> : elle sert uniquement a memoriser la preference linguistique et n&apos;est pas utilisee pour suivre l&apos;utilisateur.']],
+          ['Services tiers', ['Le site charge des polices depuis Google Fonts. Google Maps n&apos;est pas charge automatiquement : la carte demarre uniquement lorsque vous selectionnez le bouton "Charger la carte". Les liens vers Setmore, Instagram, Facebook et Google Maps ouvrent des services externes, qui peuvent traiter des donnees selon leurs propres politiques.']],
+          ['Finalites et conservation', ['Les donnees techniques sont utilisees pour rendre le site disponible et securise. Les donnees fournies volontairement via des contacts directs ou des services externes sont utilisees pour repondre aux demandes, gerer des rendez-vous ou fournir des informations sur les services du studio. Les journaux techniques sont conserves pendant la duree necessaire a la securite et a la maintenance.']],
+          ['Droits', ['Vous pouvez demander des informations sur les donnees personnelles vous concernant, leur rectification ou leur suppression lorsque cela est applicable. Vous pouvez supprimer les donnees stockees localement via les parametres de votre navigateur.']]
+        ]
+      }
+    };
+
+    function render(lang) {
+      const data = copy[lang] || copy[fallback];
+      document.documentElement.lang = lang;
+      const meta = document.querySelector('meta[name="description"]');
+      if (meta) meta.setAttribute('content', data.meta);
+      document.querySelector('[data-privacy-field="title"]').textContent = data.title;
+      document.querySelector('[data-privacy-field="updated"]').textContent = data.updated;
+      document.querySelector('[data-privacy-field="navContact"]').textContent = data.navContact;
+      document.querySelector('[data-privacy-field="backLink"]').textContent = data.backLink;
+      document.getElementById('privacyContent').innerHTML = data.sections.map(section => {
+        return '<h2>' + section[0] + '</h2>' + section[1].map(p => '<p>' + p + '</p>').join('');
+      }).join('');
+      document.querySelectorAll('[data-privacy-lang] button').forEach(button => {
+        button.classList.toggle('is-active', button.dataset.lang === lang);
+      });
+      try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+    }
+
+    let initial = fallback;
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      if (stored && copy[stored]) initial = stored;
+    } catch (e) {}
+    if (initial === fallback) {
+      const browser = (navigator.language || fallback).slice(0, 2).toLowerCase();
+      if (copy[browser]) initial = browser;
+    }
+    document.querySelectorAll('[data-privacy-lang] button').forEach(button => {
+      button.addEventListener('click', () => render(button.dataset.lang));
+    });
+    render(initial);
+  })();
+  </script>
   <script src="js/translations.js"></script>
   <script src="js/script.js"></script>
 </body>
