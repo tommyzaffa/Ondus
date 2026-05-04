@@ -144,6 +144,23 @@
   } catch (e) {}
   applyLanguage(savedLang);
 
+  /* ---- THIRD-PARTY MAPS: LOAD ONLY AFTER CLICK ---- */
+  document.querySelectorAll("[data-map-src]").forEach((mapBox) => {
+    const button = mapBox.querySelector(".js-load-map");
+    if (!button) return;
+
+    button.addEventListener("click", () => {
+      const iframe = document.createElement("iframe");
+      iframe.src = mapBox.dataset.mapSrc;
+      iframe.title = mapBox.dataset.mapTitle || "Mappa";
+      iframe.loading = "lazy";
+      iframe.referrerPolicy = "no-referrer-when-downgrade";
+      iframe.allowFullscreen = true;
+      mapBox.replaceChildren(iframe);
+      mapBox.classList.add("is-loaded");
+    });
+  });
+
   /* ---- REVEAL ON SCROLL ---- */
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver(
@@ -340,7 +357,7 @@
   }
 
   document.addEventListener("keydown", (e) => {
-    if (!lb.classList.contains("open")) return;
+    if (!lb || !lb.classList.contains("open")) return;
     if (e.key === "Escape") closeLightbox();
     if (e.key === "ArrowRight") navLightbox(1);
     if (e.key === "ArrowLeft") navLightbox(-1);

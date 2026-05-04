@@ -422,12 +422,16 @@
         </div>
 
         <div class="contact__map reveal">
-          <iframe
-            src="https://www.google.com/maps?q=Via+San+Gottardo+30,+6943+Vezia,+Svizzera&output=embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Ondus Tattoo Map"
-          ></iframe>
+          <div class="map-consent" data-map-src="https://www.google.com/maps?q=Via+San+Gottardo+30,+6943+Vezia,+Svizzera&amp;output=embed" data-map-title="Ondus Tattoo Map">
+            <div class="map-consent__box">
+              <h4>Google Maps</h4>
+              <p>La mappa viene caricata da Google solo dopo il tuo consenso.</p>
+              <div class="map-consent__actions">
+                <button type="button" class="btn btn--primary js-load-map">Carica mappa</button>
+                <a href="https://maps.google.com/?q=Via+San+Gottardo+30,+6943+Vezia,+Svizzera" target="_blank" rel="noopener">Apri in Google Maps</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -449,6 +453,7 @@
         <a href="#artists" data-i18n="nav.artists">Artisti</a>
         <a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a>
         <a href="#contact" data-i18n="nav.contact">Contatti</a>
+        <a href="privacy.html">Privacy</a>
       </div>
       <div class="footer__meta">
         <span>© <span id="year"></span> Ondus Tattoo</span>
@@ -457,6 +462,7 @@
           <span data-i18n="footer.developedBy">Sito sviluppato da</span>
           <a href="https://www.tommyzaffa.com" target="_blank" rel="noopener">Thomas Zaffalon</a>
         </span>
+        <a href="privacy.html">Privacy &amp; Cookie Policy</a>
       </div>
     </div>
   </footer>
