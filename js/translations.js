@@ -44,7 +44,7 @@ const TRANSLATIONS = {
     "services.s4.title": "Piercing",
     "services.s4.desc": "Gioielli di qualità, esperienza e igiene totale. Consigliamo il posizionamento più adatto alla tua anatomia.",
 
-    "pricing.eyebrow": "07 — Listino",
+    "pricing.eyebrow": "05 — Listino",
     "pricing.titleA": "Listino",
     "pricing.titleB": "prezzi",
     "pricing.tattooTitle": "Tatuaggi",
@@ -81,7 +81,7 @@ const TRANSLATIONS = {
     "portfolio.piercing": "Piercing",
     "portfolio.more": "Vuoi vedere altro? Segui il nostro Instagram",
 
-    "booking.eyebrow": "05 — Prenota",
+    "booking.eyebrow": "07 — Prenota",
     "booking.titleA": "Pronto a",
     "booking.titleB": "lasciare",
     "booking.titleC": "un segno?",
@@ -158,7 +158,7 @@ const TRANSLATIONS = {
     "services.s4.title": "Piercing",
     "services.s4.desc": "Quality jewelry, experience and total hygiene. We advise the best placement for your anatomy.",
 
-    "pricing.eyebrow": "07 — Prices",
+    "pricing.eyebrow": "05 — Prices",
     "pricing.titleA": "Price",
     "pricing.titleB": "list",
     "pricing.tattooTitle": "Tattoos",
@@ -195,7 +195,7 @@ const TRANSLATIONS = {
     "portfolio.piercing": "Piercing",
     "portfolio.more": "Want to see more? Follow us on Instagram",
 
-    "booking.eyebrow": "05 — Book",
+    "booking.eyebrow": "07 — Book",
     "booking.titleA": "Ready to",
     "booking.titleB": "leave",
     "booking.titleC": "a mark?",
@@ -272,7 +272,7 @@ const TRANSLATIONS = {
     "services.s4.title": "Piercing",
     "services.s4.desc": "Hochwertiger Schmuck, Erfahrung und totale Hygiene. Wir empfehlen die beste Platzierung für deine Anatomie.",
 
-    "pricing.eyebrow": "07 — Preise",
+    "pricing.eyebrow": "05 — Preise",
     "pricing.titleA": "Preis",
     "pricing.titleB": "liste",
     "pricing.tattooTitle": "Tattoos",
@@ -309,7 +309,7 @@ const TRANSLATIONS = {
     "portfolio.piercing": "Piercing",
     "portfolio.more": "Mehr sehen? Folge uns auf Instagram",
 
-    "booking.eyebrow": "05 — Buchen",
+    "booking.eyebrow": "07 — Buchen",
     "booking.titleA": "Bereit",
     "booking.titleB": "ein Zeichen",
     "booking.titleC": "zu setzen?",
@@ -386,7 +386,7 @@ const TRANSLATIONS = {
     "services.s4.title": "Piercing",
     "services.s4.desc": "Bijoux de qualité, expérience et hygiène totale. Nous conseillons le meilleur placement pour ton anatomie.",
 
-    "pricing.eyebrow": "07 — Tarifs",
+    "pricing.eyebrow": "05 — Tarifs",
     "pricing.titleA": "Liste des",
     "pricing.titleB": "prix",
     "pricing.tattooTitle": "Tatouages",
@@ -423,7 +423,7 @@ const TRANSLATIONS = {
     "portfolio.piercing": "Piercing",
     "portfolio.more": "Envie de voir plus ? Suis-nous sur Instagram",
 
-    "booking.eyebrow": "05 — Réserver",
+    "booking.eyebrow": "07 — Réserver",
     "booking.titleA": "Prêt à",
     "booking.titleB": "laisser",
     "booking.titleC": "une marque?",
