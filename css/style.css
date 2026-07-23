@@ -549,6 +549,95 @@ ul { list-style: none; }
 }
 
 /* ==============================
+   PRICING / LISTINO
+   ============================== */
+.pricing { background: var(--bone); }
+.pricing__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: start;
+}
+.pricing__card {
+  background: var(--white);
+  border: 1px solid var(--line-dark);
+  padding: clamp(1.8rem, 3.5vw, 2.8rem);
+}
+.pricing__card-title {
+  font-family: var(--f-head);
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  margin-bottom: 1.4rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--line-dark);
+}
+.pricing__from {
+  display: flex;
+  align-items: baseline;
+  gap: .6rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.2rem;
+}
+.pricing__from span {
+  font-size: .82rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  opacity: .55;
+}
+.pricing__from strong {
+  font-family: var(--f-head);
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  letter-spacing: .02em;
+  line-height: 1;
+  color: var(--red);
+}
+.pricing__note {
+  font-size: .95rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 1.8rem;
+}
+.pricing__cta {
+  display: inline-flex;
+  gap: .6rem;
+  background: var(--black);
+  color: var(--white);
+  border-color: var(--black);
+}
+.pricing__cta:hover { background: transparent; color: var(--black); }
+.pricing__cta svg { flex-shrink: 0; }
+.pricing__groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: clamp(1.2rem, 2.5vw, 2rem);
+}
+.pricing__group-title {
+  font-family: var(--f-head);
+  letter-spacing: .22em;
+  font-size: .78rem;
+  text-transform: uppercase;
+  opacity: .55;
+  margin-bottom: .8rem;
+}
+.pricing__list li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: .5rem;
+  padding: .45rem 0;
+  border-bottom: 1px solid var(--line-dark);
+  font-size: .95rem;
+}
+.pricing__list li:last-child { border-bottom: 0; }
+.pricing__list li > span:last-child {
+  font-family: var(--f-head);
+  letter-spacing: .05em;
+  white-space: nowrap;
+  opacity: .85;
+}
+
+/* ==============================
    ARTISTS
    ============================== */
 .artists__grid {
@@ -1305,6 +1394,7 @@ ul { list-style: none; }
 @media (max-width: 1024px) {
   .portfolio__grid { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 220px; }
   .studio__grid { grid-template-columns: 1fr; }
+  .pricing__grid { grid-template-columns: 1fr; }
   .contact__grid { grid-template-columns: 1fr; }
   .contact__map { min-height: 380px; }
 }
@@ -1408,6 +1498,7 @@ ul { list-style: none; }
   .footer__links { justify-content: center; }
 
   .booking__ctas .btn { width: 100%; max-width: 340px; }
+  .pricing__cta { width: 100%; }
 }
 
 @media (max-width: 480px) {
