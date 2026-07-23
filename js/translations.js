@@ -44,7 +44,7 @@ const TRANSLATIONS = {
     "services.s4.title": "Piercing",
     "services.s4.desc": "Gioielli di qualità, esperienza e igiene totale. Consigliamo il posizionamento più adatto alla tua anatomia.",
 
-    "pricing.eyebrow": "— Listino",
+    "pricing.eyebrow": "07 — Listino",
     "pricing.titleA": "Listino",
     "pricing.titleB": "prezzi",
     "pricing.tattooTitle": "Tatuaggi",
@@ -158,7 +158,7 @@ const TRANSLATIONS = {
     "services.s4.title": "Piercing",
     "services.s4.desc": "Quality jewelry, experience and total hygiene. We advise the best placement for your anatomy.",
 
-    "pricing.eyebrow": "— Prices",
+    "pricing.eyebrow": "07 — Prices",
     "pricing.titleA": "Price",
     "pricing.titleB": "list",
     "pricing.tattooTitle": "Tattoos",
@@ -272,7 +272,7 @@ const TRANSLATIONS = {
     "services.s4.title": "Piercing",
     "services.s4.desc": "Hochwertiger Schmuck, Erfahrung und totale Hygiene. Wir empfehlen die beste Platzierung für deine Anatomie.",
 
-    "pricing.eyebrow": "— Preise",
+    "pricing.eyebrow": "07 — Preise",
     "pricing.titleA": "Preis",
     "pricing.titleB": "liste",
     "pricing.tattooTitle": "Tattoos",
@@ -386,7 +386,7 @@ const TRANSLATIONS = {
     "services.s4.title": "Piercing",
     "services.s4.desc": "Bijoux de qualité, expérience et hygiène totale. Nous conseillons le meilleur placement pour ton anatomie.",
 
-    "pricing.eyebrow": "— Tarifs",
+    "pricing.eyebrow": "07 — Tarifs",
     "pricing.titleA": "Liste des",
     "pricing.titleB": "prix",
     "pricing.tattooTitle": "Tatouages",
