@@ -1186,6 +1186,7 @@ ul { list-style: none; }
 }
 .footer__links {
   display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
   font-family: var(--f-head);
   letter-spacing: .15em;
@@ -1495,7 +1496,7 @@ ul { list-style: none; }
   .hours { grid-template-columns: 1fr; }
 
   .footer__inner { flex-direction: column; text-align: center; }
-  .footer__links { justify-content: center; }
+  .footer__links { justify-content: center; gap: 1rem 1.2rem; }
 
   .booking__ctas .btn { width: 100%; max-width: 340px; }
   .pricing__cta { width: 100%; }
