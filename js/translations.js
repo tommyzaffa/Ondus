@@ -60,6 +60,7 @@ const TRANSLATIONS = {
     "pricing.p.tongue": "Lingua",
     "pricing.p.cartilage": "Cartilagini",
     "pricing.p.lobe": "Lobi",
+    "pricing.p.removal": "Rimozione Microdermal & Surface",
 
     "artists.eyebrow": "03 — Artisti",
     "artists.titleA": "Le",
@@ -115,7 +116,7 @@ const TRANSLATIONS = {
     "footer.rights": "Tutti i diritti riservati",
     "footer.developedBy": "Sito sviluppato da",
 
-    "banner.vacation": "Lo studio sarà chiuso dal 4 al 9 maggio per ferie. Restiamo comunque disponibili per fissare appuntamenti e per essere contattati: scrivici o chiamaci."
+    "banner.vacation": "Chiusura estiva dal 15 al 18 agosto. Gli ultimi posti prima delle ferie vanno in fretta: prenota ora il tuo appuntamento — scrivici o chiamaci!"
   },
 
   en: {
@@ -174,6 +175,7 @@ const TRANSLATIONS = {
     "pricing.p.tongue": "Tongue",
     "pricing.p.cartilage": "Cartilage",
     "pricing.p.lobe": "Lobes",
+    "pricing.p.removal": "Microdermal & Surface removal",
 
     "artists.eyebrow": "03 — Artists",
     "artists.titleA": "The",
@@ -229,7 +231,7 @@ const TRANSLATIONS = {
     "footer.rights": "All rights reserved",
     "footer.developedBy": "Website developed by",
 
-    "banner.vacation": "The studio will be closed from May 4 to May 9 for holidays. We're still available to schedule appointments and to be reached — write or call us."
+    "banner.vacation": "Summer closing from August 15 to 18. The last slots before the holidays go fast: book your appointment now — write or call us!"
   },
 
   de: {
@@ -288,6 +290,7 @@ const TRANSLATIONS = {
     "pricing.p.tongue": "Zunge",
     "pricing.p.cartilage": "Knorpel",
     "pricing.p.lobe": "Ohrläppchen",
+    "pricing.p.removal": "Entfernung Microdermal & Surface",
 
     "artists.eyebrow": "03 — Künstler",
     "artists.titleA": "Die",
@@ -343,7 +346,7 @@ const TRANSLATIONS = {
     "footer.rights": "Alle Rechte vorbehalten",
     "footer.developedBy": "Website entwickelt von",
 
-    "banner.vacation": "Das Studio bleibt vom 4. bis 9. Mai wegen Ferien geschlossen. Wir sind weiterhin erreichbar für Terminvereinbarungen — schreib oder ruf uns einfach an."
+    "banner.vacation": "Sommerpause vom 15. bis 18. August. Die letzten Termine vor den Ferien sind schnell weg: sichere dir jetzt deinen Platz — schreib oder ruf uns an!"
   },
 
   fr: {
@@ -402,6 +405,7 @@ const TRANSLATIONS = {
     "pricing.p.tongue": "Langue",
     "pricing.p.cartilage": "Cartilage",
     "pricing.p.lobe": "Lobes",
+    "pricing.p.removal": "Retrait Microdermal & Surface",
 
     "artists.eyebrow": "03 — Artistes",
     "artists.titleA": "Les",
@@ -457,6 +461,6 @@ const TRANSLATIONS = {
     "footer.rights": "Tous droits réservés",
     "footer.developedBy": "Site développé par",
 
-    "banner.vacation": "Le studio sera fermé du 4 au 9 mai pour les vacances. Nous restons disponibles pour fixer des rendez-vous et être contactés — écris-nous ou appelle-nous."
+    "banner.vacation": "Fermeture estivale du 15 au 18 août. Les dernières places avant les vacances partent vite : réserve ton rendez-vous maintenant — écris-nous ou appelle-nous !"
   }
 };
