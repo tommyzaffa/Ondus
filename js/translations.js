@@ -117,7 +117,7 @@ const TRANSLATIONS = {
     "footer.rights": "Tutti i diritti riservati",
     "footer.developedBy": "Sito sviluppato da",
 
-    "banner.vacation": "Chiusura estiva dal 15 al 18 agosto. Gli ultimi posti prima delle ferie vanno in fretta: prenota ora il tuo appuntamento — scrivici o chiamaci!"
+    "banner.vacation": "Studio chiuso dal 22 al 28 settembre. Gli ultimi posti prima della chiusura vanno in fretta: prenota ora il tuo appuntamento — scrivici o chiamaci!"
   },
 
   en: {
@@ -233,7 +233,7 @@ const TRANSLATIONS = {
     "footer.rights": "All rights reserved",
     "footer.developedBy": "Website developed by",
 
-    "banner.vacation": "Summer closing from August 15 to 18. The last slots before the holidays go fast: book your appointment now — write or call us!"
+    "banner.vacation": "Studio closed from September 22 to 28. The last slots before the closure go fast: book your appointment now — write or call us!"
   },
 
   de: {
@@ -349,7 +349,7 @@ const TRANSLATIONS = {
     "footer.rights": "Alle Rechte vorbehalten",
     "footer.developedBy": "Website entwickelt von",
 
-    "banner.vacation": "Sommerpause vom 15. bis 18. August. Die letzten Termine vor den Ferien sind schnell weg: sichere dir jetzt deinen Platz — schreib oder ruf uns an!"
+    "banner.vacation": "Studio vom 22. bis 28. September geschlossen. Die letzten Termine vor der Schliessung sind schnell weg: sichere dir jetzt deinen Platz — schreib oder ruf uns an!"
   },
 
   fr: {
@@ -465,6 +465,6 @@ const TRANSLATIONS = {
     "footer.rights": "Tous droits réservés",
     "footer.developedBy": "Site développé par",
 
-    "banner.vacation": "Fermeture estivale du 15 au 18 août. Les dernières places avant les vacances partent vite : réserve ton rendez-vous maintenant — écris-nous ou appelle-nous !"
+    "banner.vacation": "Studio fermé du 22 au 28 septembre. Les dernières places avant la fermeture partent vite : réserve ton rendez-vous maintenant — écris-nous ou appelle-nous !"
   }
 };
