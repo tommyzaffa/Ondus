@@ -64,19 +64,14 @@
 
   <!--
     ============================================
-    AVVISO FERIE / CHIUSURA STUDIO  [ATTIVO]
-    Per DISATTIVARE: avvolgi il blocco <aside ...></aside>
-    qui sotto fra i marker "BANNER:OPEN" e "BANNER:CLOSE"
-    dentro un commento HTML, come segue:
-
-      <!- - BANNER:OPEN
-      <aside class="alert-banner" ...>...</aside>
-      BANNER:CLOSE - ->    (rimuovi gli spazi tra - -)
+    AVVISO FERIE / CHIUSURA STUDIO  [DISATTIVATO]
+    Per riattivare, togli il commento HTML che racchiude il blocco
+    fra i marker "BANNER:OPEN" e "BANNER:CLOSE".
 
     Le traduzioni IT/EN/DE/FR sono gia' pronte.
     ============================================
   -->
-  <!-- BANNER:OPEN -->
+  <!-- BANNER:OPEN
   <aside class="alert-banner" id="alertBanner" role="status" aria-live="polite">
     <div class="alert-banner__inner">
       <span class="alert-banner__dot" aria-hidden="true"></span>
@@ -86,7 +81,7 @@
       <button class="alert-banner__close" id="alertBannerClose" aria-label="Chiudi">✕</button>
     </div>
   </aside>
-  <!-- BANNER:CLOSE -->
+  BANNER:CLOSE -->
 
   <!-- NAVIGATION -->
   <header class="nav" id="nav">
