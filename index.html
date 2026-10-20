@@ -191,11 +191,90 @@
     </div>
   </section>
 
+  <!-- PROCESSO / VIDEO
+       Su desktop: video su pannello nero a sinistra, testo su pannello chiaro a destra.
+       Il video parte (muto) solo quando entra nello schermo e si ferma quando esce.
+       File: video/processo-av1.mp4 (AV1, browser moderni) + video/processo.mp4 (H.264, fallback). -->
+  <section class="film" id="processo">
+    <div class="film__inner">
+      <header class="film__header reveal">
+        <span class="eyebrow" data-i18n="film.eyebrow">02 — Il processo</span>
+        <h2 class="section__title">
+          <span data-i18n="film.titleA">Dallo stencil</span>
+          <span class="italic" data-i18n="film.titleB">alla pelle</span>
+        </h2>
+      </header>
+
+      <div class="film__media reveal">
+        <div class="film__frame is-paused is-muted" id="filmFrame">
+          <video class="film__video" id="filmVideo" muted loop playsinline preload="none"
+                 poster="img/processo-poster.jpg" width="576" height="1024"
+                 data-i18n-aria="film.videoLabel" aria-label="Video: realizzazione di un tatuaggio da Ondus Tattoo, dallo stencil al risultato finale">
+            <source src="video/processo-av1.mp4" type='video/mp4; codecs="av01.0.04M.10, mp4a.40.2"' />
+            <source src="video/processo.mp4" type='video/mp4; codecs="avc1.64001F, mp4a.40.2"' />
+          </video>
+
+          <button class="film__toggle" id="filmToggle" type="button" data-i18n-aria="film.play" aria-label="Riproduci video">
+            <span class="film__play" aria-hidden="true">
+              <svg class="film__icon-play" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l10.5-6.5z"/></svg>
+              <svg class="film__icon-pause" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><rect x="6.5" y="5" width="3.5" height="14"/><rect x="14" y="5" width="3.5" height="14"/></svg>
+            </span>
+          </button>
+
+          <button class="film__sound" id="filmSound" type="button" data-i18n-aria="film.soundOn" aria-label="Attiva audio">
+            <svg class="film__icon-muted" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M16 9.5l5 5M21 9.5l-5 5"/></svg>
+            <svg class="film__icon-sound" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4.2 4.2 0 0 1 0 6M18.2 6.5a8 8 0 0 1 0 11"/></svg>
+          </button>
+
+          <span class="film__progress" aria-hidden="true"><span id="filmProgress"></span></span>
+          <span class="film__tag" aria-hidden="true">Work in progress · Ondus Tattoo</span>
+        </div>
+      </div>
+
+      <div class="film__body reveal">
+        <p class="film__lead" data-i18n="film.lead">Un tatuaggio non nasce in un attimo: prende forma linea dopo linea, sfumatura dopo sfumatura.</p>
+        <p data-i18n="film.p1">In questo video segui un nostro lavoro dall'inizio alla fine: il disegno trasferito sulla pelle, le linee, le ombre costruite con pazienza e il risultato finale. Ogni pezzo segue lo stesso percorso, con la massima cura dell'igiene in ogni fase.</p>
+
+        <ol class="film__steps">
+          <li>
+            <span class="film__step-num">01</span>
+            <div>
+              <h3 data-i18n="film.s1.title">Il disegno</h3>
+              <p data-i18n="film.s1.desc">Studiato insieme a te e trasferito sulla pelle con lo stencil.</p>
+            </div>
+          </li>
+          <li>
+            <span class="film__step-num">02</span>
+            <div>
+              <h3 data-i18n="film.s2.title">Linee &amp; ombre</h3>
+              <p data-i18n="film.s2.desc">Mano ferma e pazienza: il pezzo prende profondità strato dopo strato.</p>
+            </div>
+          </li>
+          <li>
+            <span class="film__step-num">03</span>
+            <div>
+              <h3 data-i18n="film.s3.title">Il risultato</h3>
+              <p data-i18n="film.s3.desc">Un lavoro pulito e definito, seguito fino alla guarigione.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="film__ctas">
+          <a href="https://ondustattoofydl.setmore.com/ondus" target="_blank" rel="noopener" class="btn btn--primary" data-i18n="film.book">Prenota il tuo tatuaggio</a>
+          <a href="https://www.instagram.com/ondus.tattoo" target="_blank" rel="noopener" class="film__link">
+            <span data-i18n="film.insta">Altri lavori su Instagram</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- SERVICES -->
   <section class="services section section--dark" id="services">
     <div class="section__inner">
       <div class="section__header reveal">
-        <span class="eyebrow" data-i18n="services.eyebrow">02 — Servizi</span>
+        <span class="eyebrow" data-i18n="services.eyebrow">03 — Servizi</span>
         <h2 class="section__title"><span data-i18n="services.titleA">Cosa</span> <span class="italic" data-i18n="services.titleB">facciamo</span></h2>
       </div>
 
@@ -235,7 +314,7 @@
   <section class="artists section" id="artists">
     <div class="section__inner">
       <div class="section__header reveal">
-        <span class="eyebrow" data-i18n="artists.eyebrow">03 — Artisti</span>
+        <span class="eyebrow" data-i18n="artists.eyebrow">04 — Artisti</span>
         <h2 class="section__title"><span data-i18n="artists.titleA">Le</span> <span class="italic" data-i18n="artists.titleB">mani</span> <span data-i18n="artists.titleC">dello studio</span></h2>
       </div>
 
@@ -280,7 +359,7 @@
   <section class="portfolio section section--dark" id="portfolio">
     <div class="section__inner">
       <div class="section__header reveal">
-        <span class="eyebrow" data-i18n="portfolio.eyebrow">04 — Portfolio</span>
+        <span class="eyebrow" data-i18n="portfolio.eyebrow">05 — Portfolio</span>
         <h2 class="section__title"><span data-i18n="portfolio.titleA">Inchiostro</span> <span class="italic" data-i18n="portfolio.titleB">&amp; metallo</span></h2>
       </div>
 
@@ -343,7 +422,7 @@
   <section class="pricing section" id="pricing">
     <div class="section__inner">
       <div class="section__header reveal">
-        <span class="eyebrow" data-i18n="pricing.eyebrow">05 — Listino</span>
+        <span class="eyebrow" data-i18n="pricing.eyebrow">06 — Listino</span>
         <h2 class="section__title"><span data-i18n="pricing.titleA">Listino</span> <span class="italic" data-i18n="pricing.titleB">prezzi</span></h2>
       </div>
 
@@ -421,7 +500,7 @@
   <section class="contact section section--dark" id="contact">
     <div class="section__inner">
       <div class="section__header reveal">
-        <span class="eyebrow" data-i18n="contact.eyebrow">06 — Contatti</span>
+        <span class="eyebrow" data-i18n="contact.eyebrow">07 — Contatti</span>
         <h2 class="section__title"><span data-i18n="contact.titleA">Passa</span> <span class="italic" data-i18n="contact.titleB">da noi</span></h2>
       </div>
 
@@ -489,7 +568,7 @@
   <!-- BOOKING CTA -->
   <section class="booking section" id="booking">
     <div class="section__inner booking__inner reveal">
-      <span class="eyebrow" data-i18n="booking.eyebrow">07 — Prenota</span>
+      <span class="eyebrow" data-i18n="booking.eyebrow">08 — Prenota</span>
       <h2 class="section__title section__title--xl">
         <span data-i18n="booking.titleA">Pronto a</span>
         <span class="italic" data-i18n="booking.titleB">lasciare</span>

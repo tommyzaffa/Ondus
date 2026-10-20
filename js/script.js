@@ -107,6 +107,11 @@
       if (dict[key]) el.textContent = dict[key];
     });
 
+    document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-aria");
+      if (dict[key]) el.setAttribute("aria-label", dict[key]);
+    });
+
     if (langLabel) langLabel.textContent = lang.toUpperCase();
     if (langList) {
       langList.querySelectorAll("li").forEach((li) => {
@@ -160,6 +165,117 @@
       mapBox.classList.add("is-loaded");
     });
   });
+
+  /* ---- PROCESS VIDEO ----
+     Muted autoplay only while on screen (saves data and CPU), nothing is
+     downloaded until the section gets close. Reduced motion / data saver:
+     no autoplay, the visitor starts it with the play button. */
+  const film = document.getElementById("filmVideo");
+  const filmFrame = document.getElementById("filmFrame");
+  const filmToggle = document.getElementById("filmToggle");
+  const filmSound = document.getElementById("filmSound");
+  const filmProgress = document.getElementById("filmProgress");
+
+  if (film && filmFrame && filmToggle && filmSound) {
+    const saveData = !!(navigator.connection && navigator.connection.saveData);
+    let autoplay = !reduceMotion && !saveData;
+    let rafId = 0;
+
+    function setAriaKey(el, key) {
+      el.setAttribute("data-i18n-aria", key);
+      const dict = TRANSLATIONS[document.documentElement.lang] || TRANSLATIONS[DEFAULT_LANG];
+      if (dict[key]) el.setAttribute("aria-label", dict[key]);
+    }
+
+    function syncFilmUI() {
+      filmFrame.classList.toggle("is-paused", film.paused);
+      filmFrame.classList.toggle("is-muted", film.muted);
+      setAriaKey(filmToggle, film.paused ? "film.play" : "film.pause");
+      setAriaKey(filmSound, film.muted ? "film.soundOn" : "film.soundOff");
+    }
+
+    function tickProgress() {
+      if (filmProgress && film.duration) {
+        filmProgress.style.transform = "scaleX(" + film.currentTime / film.duration + ")";
+      }
+      rafId = requestAnimationFrame(tickProgress);
+    }
+
+    function playFilm() {
+      const p = film.play();
+      if (p && p.catch) {
+        p.catch(() => {
+          // Unmuted playback can be refused without a fresh user gesture:
+          // fall back to muted, otherwise leave it paused with the play button.
+          if (!film.muted) {
+            film.muted = true;
+            film.play().catch(() => {});
+          }
+          syncFilmUI();
+        });
+      }
+    }
+
+    film.addEventListener("play", () => {
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(tickProgress);
+      syncFilmUI();
+    });
+    film.addEventListener("pause", () => {
+      cancelAnimationFrame(rafId);
+      syncFilmUI();
+    });
+    film.addEventListener("volumechange", syncFilmUI);
+
+    filmToggle.addEventListener("click", () => {
+      if (film.paused) {
+        autoplay = true;
+        playFilm();
+      } else {
+        // Respect an explicit pause: don't resume on the next scroll into view
+        autoplay = false;
+        film.pause();
+      }
+    });
+
+    filmSound.addEventListener("click", () => {
+      film.muted = !film.muted;
+      if (!film.muted && film.paused) {
+        autoplay = true;
+        playFilm();
+      }
+    });
+
+    if ("IntersectionObserver" in window) {
+      // Start buffering a bit before the video scrolls into view
+      const preloadIO = new IntersectionObserver(
+        (entries) => {
+          if (entries.some((e) => e.isIntersecting)) {
+            preloadIO.disconnect();
+            if (autoplay && film.readyState === 0) {
+              film.preload = "auto";
+              film.load();
+            }
+          }
+        },
+        { rootMargin: "400px 0px" }
+      );
+      preloadIO.observe(filmFrame);
+
+      const playIO = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && autoplay) playFilm();
+            else if (!entry.isIntersecting && !film.paused) film.pause();
+          });
+        },
+        { threshold: 0.35 }
+      );
+      playIO.observe(filmFrame);
+    }
+
+    syncFilmUI();
+  }
 
   /* ---- REVEAL ON SCROLL ---- */
   if ("IntersectionObserver" in window) {
