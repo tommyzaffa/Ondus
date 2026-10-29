@@ -370,17 +370,30 @@
       </div>
 
       <div class="portfolio__grid reveal" id="portfolioGrid">
-        <!-- Visibili subito (su mobile: 8 iniziali) -->
+        <!--
+          Elementi SENZA data-extra = visibili subito anche su mobile (8 foto + i video).
+          Elementi CON data-extra = nascosti su mobile finché non si clicca "Carica altri".
+          L'ordine nel codice è voluto: su mobile gli elementi senza data-extra si
+          compattano in alto, su desktop i video restano lontani tra loro.
+
+          VIDEO (pf-item--video): occupano 2 righe. In griglia gira un loop muto
+          (video/NOME-loop*.mp4), al click si apre il video completo con audio
+          (data-video="video/NOME" -> video/NOME-av1.mp4 + video/NOME.mp4).
+          Come prepararli: vedi README.
+        -->
         <figure class="pf-item" data-cat="piercing"><img src="img/piercing_1.jpg" alt="Piercing" loading="lazy"/></figure>
         <figure class="pf-item" data-cat="tattoo"><img src="img/cristo.jpg" alt="Cristo realistico" loading="lazy"/></figure>
+        <figure class="pf-item pf-item--video" data-cat="tattoo" data-video="video/processo">
+          <video muted loop playsinline preload="none" poster="img/processo-poster.jpg" width="576" height="1024" aria-label="Cavallo — video">
+            <source src="video/processo-loop-av1.mp4" type='video/mp4; codecs="av01.0.04M.10"' />
+            <source src="video/processo-loop.mp4" type='video/mp4; codecs="avc1.64001F"' />
+          </video>
+          <span class="pf-item__badge" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l10.5-6.5z"/></svg></span>
+        </figure>
         <figure class="pf-item" data-cat="tattoo"><img src="img/farfalla.jpg" alt="Farfalla" loading="lazy"/></figure>
         <figure class="pf-item" data-cat="piercing"><img src="img/piercing_3.jpg" alt="Piercing" loading="lazy"/></figure>
         <figure class="pf-item" data-cat="tattoo"><img src="img/elefante.jpg" alt="Elefante" loading="lazy"/></figure>
         <figure class="pf-item" data-cat="tattoo"><img src="img/scream.jpg" alt="Scream" loading="lazy"/></figure>
-        <figure class="pf-item" data-cat="piercing"><img src="img/piercing_5.jpg" alt="Piercing" loading="lazy"/></figure>
-        <figure class="pf-item" data-cat="tattoo"><img src="img/cane.jpg" alt="Cane" loading="lazy"/></figure>
-
-        <!-- Extra (visibili su desktop, nascosti su mobile finché non si clicca "Carica altri") -->
         <figure class="pf-item" data-cat="tattoo" data-extra="true"><img src="img/ali.jpg" alt="Ali" loading="lazy"/></figure>
         <figure class="pf-item" data-cat="piercing" data-extra="true"><img src="img/piercing_2.jpg" alt="Piercing" loading="lazy"/></figure>
         <figure class="pf-item" data-cat="tattoo" data-extra="true"><img src="img/avocado.jpg" alt="Avocado" loading="lazy"/></figure>
@@ -389,6 +402,15 @@
         <figure class="pf-item" data-cat="tattoo" data-extra="true"><img src="img/catene.jpg" alt="Catene" loading="lazy"/></figure>
         <figure class="pf-item" data-cat="tattoo" data-extra="true"><img src="img/cocinella.jpg" alt="Coccinella" loading="lazy"/></figure>
         <figure class="pf-item" data-cat="piercing" data-extra="true"><img src="img/piercing_6.jpg" alt="Piercing" loading="lazy"/></figure>
+        <figure class="pf-item" data-cat="piercing"><img src="img/piercing_5.jpg" alt="Piercing" loading="lazy"/></figure>
+        <figure class="pf-item pf-item--video" data-cat="tattoo" data-video="video/fucile">
+          <video muted loop playsinline preload="none" poster="img/fucile-poster.jpg" width="576" height="1024" aria-label="Fucile — video">
+            <source src="video/fucile-loop-av1.mp4" type='video/mp4; codecs="av01.0.04M.10"' />
+            <source src="video/fucile-loop.mp4" type='video/mp4; codecs="avc1.64001F"' />
+          </video>
+          <span class="pf-item__badge" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l10.5-6.5z"/></svg></span>
+        </figure>
+        <figure class="pf-item" data-cat="tattoo"><img src="img/cane.jpg" alt="Cane" loading="lazy"/></figure>
         <figure class="pf-item" data-cat="tattoo" data-extra="true"><img src="img/filo.jpg" alt="Filo" loading="lazy"/></figure>
         <figure class="pf-item" data-cat="tattoo" data-extra="true"><img src="img/fiocco.jpg" alt="Fiocco" loading="lazy"/></figure>
         <figure class="pf-item" data-cat="piercing" data-extra="true"><img src="img/piercing_7.jpg" alt="Piercing" loading="lazy"/></figure>
@@ -619,6 +641,7 @@
     <button class="lightbox__prev" id="lbPrev" aria-label="Prev">‹</button>
     <button class="lightbox__next" id="lbNext" aria-label="Next">›</button>
     <img id="lbImg" src="" alt="" />
+    <video id="lbVideo" class="lightbox__video" controls playsinline hidden></video>
   </div>
 
   <script src="js/translations.js"></script>

@@ -409,55 +409,136 @@
     });
   });
 
-  /* ---- LIGHTBOX ---- */
+  /* ---- PORTFOLIO VIDEO TILES ----
+     Silent loops that behave like moving photos: buffered only when the
+     grid gets close, played only while on screen. Same reduced motion /
+     data saver rules as the process video: poster only. */
+  const tileVideos = document.querySelectorAll(".pf-item--video video");
+  const tilesAutoplay = !reduceMotion &&
+    !(navigator.connection && navigator.connection.saveData);
+
+  if (tileVideos.length && tilesAutoplay && "IntersectionObserver" in window) {
+    const tilePreloadIO = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const v = entry.target;
+          tilePreloadIO.unobserve(v);
+          if (v.readyState === 0) {
+            v.preload = "auto";
+            v.load();
+          }
+        });
+      },
+      { rootMargin: "400px 0px" }
+    );
+    const tilePlayIO = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const v = entry.target;
+          if (entry.isIntersecting) {
+            const p = v.play();
+            if (p && p.catch) p.catch(() => {});
+          } else if (!v.paused) {
+            v.pause();
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    tileVideos.forEach((v) => {
+      tilePreloadIO.observe(v);
+      tilePlayIO.observe(v);
+    });
+  }
+
+  /* ---- LIGHTBOX ----
+     Photos open the image; video tiles open the full clip with sound
+     (data-video="video/NAME" -> NAME-av1.mp4 with NAME.mp4 as fallback). */
   const lb = document.getElementById("lightbox");
   const lbImg = document.getElementById("lbImg");
+  const lbVideo = document.getElementById("lbVideo");
   const lbClose = document.getElementById("lbClose");
   const lbPrev = document.getElementById("lbPrev");
   const lbNext = document.getElementById("lbNext");
 
-  let visibleImgs = [];
+  const VIDEO_TYPES = [
+    ["-av1.mp4", 'video/mp4; codecs="av01.0.04M.10, mp4a.40.2"'],
+    [".mp4", 'video/mp4; codecs="avc1.64001F, mp4a.40.2"'],
+  ];
+
+  let visibleItems = [];
   let currentIdx = 0;
 
-  function getVisibleImages() {
+  function getVisibleItems() {
     return Array.from(pfItems)
-      .filter((i) => !i.classList.contains("hidden") && !i.classList.contains("mobile-hidden"))
-      .map((i) => i.querySelector("img"));
+      .filter((i) => !i.classList.contains("hidden") && !i.classList.contains("mobile-hidden"));
+  }
+
+  function stopLightboxVideo() {
+    if (!lbVideo) return;
+    lbVideo.pause();
+    lbVideo.replaceChildren();
+    lbVideo.removeAttribute("src");
+    lbVideo.load(); // drops the buffered clip and stops downloading
+    lbVideo.hidden = true;
+  }
+
+  function showItem(item) {
+    if (!item) return;
+    const base = item.dataset.video;
+    if (base && lbVideo) {
+      const tile = item.querySelector("video");
+      lbImg.hidden = true;
+      lbImg.removeAttribute("src");
+      lbVideo.replaceChildren(...VIDEO_TYPES.map(([suffix, type]) => {
+        const source = document.createElement("source");
+        source.src = base + suffix;
+        source.type = type;
+        return source;
+      }));
+      lbVideo.poster = tile ? tile.poster : "";
+      lbVideo.setAttribute("aria-label", tile ? tile.getAttribute("aria-label") || "" : "");
+      lbVideo.hidden = false;
+      lbVideo.load();
+      const p = lbVideo.play();
+      if (p && p.catch) p.catch(() => {});
+    } else {
+      const img = item.querySelector("img");
+      if (!img) return;
+      stopLightboxVideo();
+      lbImg.hidden = false;
+      lbImg.src = img.src.replace("w=800", "w=1600");
+      lbImg.alt = img.alt || "";
+    }
   }
 
   function openLightbox(idx) {
-    visibleImgs = getVisibleImages();
+    visibleItems = getVisibleItems();
     currentIdx = idx;
-    const img = visibleImgs[currentIdx];
-    if (!img) return;
-    lbImg.src = img.src.replace("w=800", "w=1600");
-    lbImg.alt = img.alt || "";
+    if (!visibleItems[currentIdx]) return;
+    showItem(visibleItems[currentIdx]);
     lb.classList.add("open");
     lb.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
   }
 
   function closeLightbox() {
+    stopLightboxVideo();
     lb.classList.remove("open");
     lb.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
   }
 
   function navLightbox(dir) {
-    if (!visibleImgs.length) return;
-    currentIdx = (currentIdx + dir + visibleImgs.length) % visibleImgs.length;
-    const img = visibleImgs[currentIdx];
-    if (img) {
-      lbImg.src = img.src.replace("w=800", "w=1600");
-      lbImg.alt = img.alt || "";
-    }
+    if (!visibleItems.length) return;
+    currentIdx = (currentIdx + dir + visibleItems.length) % visibleItems.length;
+    showItem(visibleItems[currentIdx]);
   }
 
-  pfItems.forEach((item, idx) => {
+  pfItems.forEach((item) => {
     item.addEventListener("click", () => {
-      const visible = getVisibleImages();
-      const img = item.querySelector("img");
-      const realIdx = visible.indexOf(img);
+      const realIdx = getVisibleItems().indexOf(item);
       if (realIdx >= 0) openLightbox(realIdx);
     });
   });
